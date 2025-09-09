@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,7 +20,6 @@
         .whatsapp-button:hover {
             box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
         }
-        /* NUEVO: Estilo para el botón de Google Maps */
         .maps-button:hover {
             box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
         }
@@ -39,8 +34,9 @@
                 <p class="text-gray-600 dark:text-gray-400 mt-2">Tu diseño, impreso en tus uñas al instante.</p>
             </header>
 
-            <!-- Sección del Video -->
-            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6 shadow-lg">
+            <!-- ***** SECCIÓN DEL VIDEO MODIFICADA ***** -->
+            <!-- Cambiamos a un formato vertical 9:16 y centrado para que se vea como un Reel/Short -->
+            <div class="w-full max-w-xs mx-auto aspect-[9/16] rounded-lg overflow-hidden mb-6 shadow-lg">
                 <iframe 
                     src="https://youtube.com/embed/6mEjEY9GdvM?si=V1L14gTUTZqET-0V" 
                     frameborder="0" 
@@ -63,15 +59,13 @@
                     Agendar por WhatsApp
                 </a>
 
-                <!-- ***** INICIO DEL NUEVO BOTÓN DE GOOGLE MAPS ***** -->
-                <!-- IMPORTANTE: Reemplaza 'URL_DE_GOOGLE_MAPS_AQUI' con el enlace de tu negocio. -->
+                <!-- Botón de Google Maps -->
                 <a href="https://share.google/ydhGa26fi7ldaD1uj"
                    target="_blank"
                    class="action-button maps-button inline-block bg-indigo-600 text-white font-bold py-4 px-8 rounded-full text-lg w-full shadow-lg mt-4">
                    <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
                     Cómo Llegar (Google Maps)
                 </a>
-                <!-- ***** FIN DEL NUEVO BOTÓN ***** -->
             </div>
         </div>
         <footer class="bg-gray-50 dark:bg-gray-700 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
@@ -81,8 +75,4 @@
 
 </body>
 </html>
-
-
-
-                
 
