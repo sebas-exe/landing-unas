@@ -3,40 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseños de Uñas Digitales - Agenda tu Cita</title>
-    <!-- Incluimos Tailwind CSS para un diseño moderno y responsivo -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Artian Nails - Diseño de Uñas Personalizadas en Cali | Krespos Peluquería</title>
+    <!-- Incluimos Tailwind CSS para un diseño moderno y responsivo --><script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Azul oscuro para un look premium */
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif; /* Una fuente más elegante para títulos */
         }
         .action-button {
             transition: all 0.3s ease;
         }
         .action-button:hover {
-            transform: scale(1.05);
+            transform: scale(1.03); /* Ligeramente menos agresivo que 1.05 */
+        }
+        .whatsapp-button {
+            background-color: #22c55e; /* Verde original de WhatsApp */
         }
         .whatsapp-button:hover {
-            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 8px 15px rgba(34, 197, 94, 0.4);
+            background-color: #16a34a; /* Verde más oscuro al pasar el mouse */
+        }
+        .maps-button {
+            background-color: #6d28d9; /* Un morado más vibrante */
         }
         .maps-button:hover {
-            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 8px 15px rgba(109, 40, 217, 0.4);
+            background-color: #5b21b6; /* Morado más oscuro al pasar el mouse */
+        }
+        .offer-banner {
+            background-color: #fde047; /* Amarillo brillante para la oferta */
+            color: #1f2937; /* Texto oscuro para contraste */
+            border-radius: 0.75rem; /* Bordes redondeados */
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: pulse 1.5s infinite; /* Animación sutil */
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.01); }
+            100% { transform: scale(1); }
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fbcfe8; /* Rosa claro para las preguntas */
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #cbd5e1; /* Gris claro para las respuestas */
+            padding-top: 0.5rem;
+        }
+        .faq-answer.active {
+            max-height: 150px; /* Altura máxima para la transición */
+        }
+
+        /* Carrusel de imágenes */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 320px; /* Ajuste para que el carrusel sea similar al tamaño del video */
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 9 / 16; /* Asegura un formato vertical */
+        }
+        .carousel-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 9999px; /* Botones redondos */
+        }
+        .carousel-nav-button.prev {
+            left: 0.5rem;
+        }
+        .carousel-nav-button.next {
+            right: 0.5rem;
+        }
+        .carousel-dots {
+            text-align: center;
+            padding: 0.5rem 0;
+            position: absolute;
+            bottom: 0.5rem;
+            width: 100%;
+        }
+        .carousel-dot {
+            height: 8px;
+            width: 8px;
+            margin: 0 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .carousel-dot.active {
+            background-color: #fde047; /* Amarillo de la oferta */
         }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex items-center justify-center min-h-screen p-4">
+<body class="dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex items-center justify-center min-h-screen p-4">
 
-    <main class="w-full max-w-lg bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+    <main class="w-full max-w-lg bg-gray-800 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden text-white">
         <div class="p-6 md:p-8">
             <header class="text-center mb-6">
-                <h1 class="text-3xl md:text-4xl font-bold text-pink-500">Impresión Personalizada de Uñas Cali</h1>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">Tu diseño, impreso en tus uñas al instante.</p>
+                <p class="text-pink-300 dark:text-pink-400 text-sm mb-1">
+                    Presentado por <span class="font-semibold">Krespos Peluquería Unisex</span>
+                </p>
+                <h1 class="text-4xl md:text-5xl font-bold text-pink-500 leading-tight">Artian Nails</h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-gray-300 mt-2">Diseño de Uñas Personalizadas en Cali</h2>
+                <p class="text-gray-400 dark:text-gray-400 mt-3">
+                    Tu estilo, impreso en tus uñas al instante.
+                </p>
             </header>
 
-            <!-- ***** SECCIÓN DEL VIDEO MODIFICADA ***** -->
-            <!-- Cambiamos a un formato vertical 9:16 y centrado para que se vea como un Reel/Short -->
-            <div class="w-full max-w-xs mx-auto aspect-[9/16] rounded-lg overflow-hidden mb-6 shadow-lg">
+            <!-- Carrusel de Imágenes de Uñas Terminadas --><div class="carousel-container">
+                <div class="carousel-track" id="image-carousel-track">
+                    <!-- Asegúrate de reemplazar 'URL_DE_TU_FOTO_X.jpg' con las URLs reales de tus imágenes --><div class="carousel-slide"><img src="URL_DE_TU_FOTO_1.jpg" alt="Diseño de Uña Personalizada 1"></div>
+                    <div class="carousel-slide"><img src="URL_DE_TU_FOTO_2.jpg" alt="Diseño de Uña Personalizada 2"></div>
+                    <div class="carousel-slide"><img src="URL_DE_TU_FOTO_3.jpg" alt="Diseño de Uña Personalizada 3"></div>
+                    <!-- Añade más slides si tienes más fotos (hasta 5) --><!-- <div class="carousel-slide"><img src="URL_DE_TU_FOTO_4.jpg" alt="Diseño de Uña Personalizada 4"></div> --><!-- <div class="carousel-slide"><img src="URL_DE_TU_FOTO_5.jpg" alt="Diseño de Uña Personalizada 5"></div> --></div>
+                <button class="carousel-nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-nav-button next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+
+            <!-- Sección del Video --><div class="w-full max-w-xs mx-auto aspect-[9/16] rounded-lg overflow-hidden mb-6 shadow-lg">
                 <iframe 
                     src="https://youtube.com/embed/6mEjEY9GdvM?si=V1L14gTUTZqET-0V" 
                     frameborder="0" 
@@ -47,33 +179,144 @@
             </div>
 
             <div class="text-center">
-                <p class="mb-6">
-                    ¿Te gusta lo que ves? ¡Agenda tu cita o visítanos para conocer la tecnología!
+                <p class="mb-4 text-gray-300">
+                    ¿Te imaginas tus uñas con tu foto favorita o el diseño que desees? ¡Ahora es posible!
                 </p>
+
+                <!-- Oferta de Lanzamiento --><div class="offer-banner mb-6 p-4 rounded-xl shadow-md">
+                    <p class="text-xl md:text-2xl font-extrabold mb-1">
+                        ¡OFERTA DE LANZAMIENTO!
+                    </p>
+                    <p class="text-lg md:text-xl font-bold">
+                        2x1 en personalización de uñas por solo <span class="text-pink-600">$10.000 COP</span>
+                    </p>
+                    <p class="text-sm italic mt-1">
+                        ¡Por tiempo limitado! Agenda tu cita y no te quedes sin la tuya.
+                    </p>
+                </div>
                 
-                <!-- Botón de WhatsApp -->
-                <a href="https://wa.link/lxisg9"
+                <!-- Botón de WhatsApp --><a href="https://wa.link/lxisg9"
                    target="_blank"
-                   class="action-button whatsapp-button inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-full text-lg w-full shadow-lg">
+                   class="action-button whatsapp-button inline-block text-white font-bold py-4 px-8 rounded-full text-lg w-full shadow-lg mt-4">
                     <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.02 2a8 8 0 100 16 8 8 0 000-16zM6.5 10.5c.28 0 .5.22.5.5v1c0 .28-.22.5-.5.5h-1c-.28 0-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5h1zm3.5 0c.28 0 .5.22.5.5v1c0 .28-.22.5-.5.5h-1c-.28 0-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5h1zm3.5 0c.28 0 .5.22.5.5v1c0 .28-.22.5-.5.5h-1c-.28 0-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5h1z"></path></svg>
-                    Agendar por WhatsApp
+                    Agendar tu Experiencia Artian Nails
                 </a>
 
-                <!-- Botón de Google Maps -->
-                <a href="https://maps.app.goo.gl/vwkKPfp1ujMKKogj7?g_st=ac"
+                <!-- Botón de Google Maps --><a href="https://maps.app.goo.gl/vwkKPfp1ujMKKogj7?g_st=ac"
                    target="_blank"
-                   class="action-button maps-button inline-block bg-indigo-600 text-white font-bold py-4 px-8 rounded-full text-lg w-full shadow-lg mt-4">
-                   <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-                    Cómo Llegar (Google Maps)
+                   class="action-button maps-button inline-block text-white font-bold py-4 px-8 rounded-full text-lg w-full shadow-lg mt-4">
+                    <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Visítanos en Krespos Peluquería
                 </a>
             </div>
+
+            <!-- Sección de Preguntas Frecuentes (FAQ) --><div class="mt-10 pt-6 border-t border-gray-700">
+                <h3 class="text-2xl font-bold text-pink-400 mb-5 text-center">Preguntas Frecuentes</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cómo funciona Artian Nails?</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>1. Aplicamos una base especial (Print Gel).</p>
+                            <p>2. Imprimimos tu diseño favorito en solo 30 segundos.</p>
+                            <p>3. Sellamos con un Top Coat de alta calidad para máxima duración.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuánto dura el diseño?</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>¡El diseño dura lo mismo que tu esmaltado semipermanente, intacto hasta por 3 semanas!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Daña mis uñas?</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>¡Para nada! El proceso es 100% seguro y se aplica sobre tu esmalte, no directamente sobre la uña natural.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <footer class="bg-gray-50 dark:bg-gray-700 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
-            &copy; 2024 NailArt Digital. Todos los derechos reservados.
+        <footer class="bg-gray-900 dark:bg-gray-900 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+            &copy; 2024 Artian Nails by Krespos Peluquería. Todos los derechos reservados.
         </footer>
     </main>
 
+    <script>
+        // Lógica del carrusel de imágenes
+        const carouselTrack = document.getElementById('image-carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.getElementById('carousel-dots');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        // Crear los puntos de navegación
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('carousel-dot');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function moveSlide(direction) {
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        updateCarousel(); // Inicializar carrusel
+
+
+        // Lógica del acordeón FAQ
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const arrow = element.querySelector('span:last-child');
+            
+            // Cerrar todos los demás
+            document.querySelectorAll('.faq-answer.active').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.style.maxHeight = 0;
+                    item.previousElementSibling.querySelector('span:last-child').innerHTML = '&#9662;'; // Flecha hacia abajo
+                }
+            });
+
+            // Abrir/Cerrar el actual
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                answer.style.maxHeight = 0;
+                arrow.innerHTML = '&#9662;'; // Flecha hacia abajo
+            } else {
+                answer.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px"; // Ajustar a la altura del contenido
+                arrow.innerHTML = '&#9652;'; // Flecha hacia arriba
+            }
+        }
+    </script>
 </body>
 </html>
-
-
